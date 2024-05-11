@@ -5,6 +5,7 @@ import java.util.List;
 import com.authority.personregister.interfaces.PersonInterface;
 
 public class Person implements PersonInterface {
+  private Long id;
   private String firstName;
   private String middleName;
   private String lastName;
@@ -54,6 +55,22 @@ public class Person implements PersonInterface {
     this.lifeEventData = lifeEventData;
     this.citizenship = citizenship;
     this.spokenLanguage = spokenLanguage;
+  }
+
+  public Person(long id, String firstName, String middleName, String lastName) {
+    this.id = id;
+    this.firstName = firstName;
+    this.middleName = middleName;
+    this.lastName = lastName;
+    this.children = null;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   @Override

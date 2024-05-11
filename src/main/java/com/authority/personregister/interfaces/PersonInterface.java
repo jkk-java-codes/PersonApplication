@@ -6,6 +6,8 @@ import com.authority.personregister.businessLogicClasses.LifeEventData;
 import com.authority.personregister.businessLogicClasses.Person;
 
 public interface PersonInterface {
+  Long getId();
+
   String getFirstName();
 
   void setFirstName(String firstName);
