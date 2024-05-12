@@ -9,21 +9,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class PersonController {
   private List<Person> persons = new ArrayList<>();
 
+  // these hardcoded for demo and test purposes only, since no db connection yet
   public PersonController() {
-    persons.add(new Person(1L, "Mikko", "Milli", "Mallikas"));
-    persons.add(new Person(1L, "Matti", "Masa", "Mallikas"));
-    persons.add(new Person(1L, "Maija", "Maippi", "Mallikas"));
-    persons.add(new Person(1L, "Leena", "Lennu", "Mallikas"));
+    persons = new ArrayList<>();
 
+    persons.add(new Person(UUID.randomUUID(), "Mikko", "Mika", "Mallikas", null, null, null, null, null, null));
+    persons.add(new Person(UUID.randomUUID(), "Matti", "Marko", "Mallikas", null, null, null, null, null, null));
+    persons.add(new Person(UUID.randomUUID(), "Maija", "Mirka", "Mallikas", null, null, null, null, null, null));
+    persons.add(new Person(UUID.randomUUID(), "Leena", "Liisa", "Mallikas", null, null, null, null, null, null));
+    persons.add(new Person(UUID.randomUUID(), "Taija", "Tiina", "Tahdikas", null, null, null, null, null, null));
   }
 
-  @GetMapping("/persons/{id}")
-  public ResponseEntity<Person> getPerson(@PathVariable("id") Long id) {
+  @GetMapping("/person/{id}")
+  public ResponseEntity<Person> getPerson(@PathVariable("id") UUID id) {
     Person person = fetchPersonById(id);
 
     if (person != null) {
@@ -38,7 +42,7 @@ public class PersonController {
     return new ResponseEntity<>(persons, HttpStatus.OK);
   }
 
-  private Person fetchPersonById(Long id) {
+  private Person fetchPersonById(UUID id) {
     return persons.stream()
         .filter(person -> person.getId().equals(id))
         .findFirst()

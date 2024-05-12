@@ -1,75 +1,45 @@
 package com.authority.personregister.businessLogicClasses;
 
+import java.util.UUID;
 import java.util.List;
 
 import com.authority.personregister.interfaces.PersonInterface;
 
 public class Person implements PersonInterface {
-  private Long id;
+  private UUID id;
   private String firstName;
   private String middleName;
   private String lastName;
   private String identityNumber;
   private LifeEventData lifeEventData;
   private String citizenship;
+  private String spokenLanguage;
   private List<Person> children;
   private Person spouse;
-  private String spokenLanguage;
 
   public Person() {
   }
 
-  public Person(List<Person> children) {
-    this.children = children;
-  }
-
-  public Person(String identityNumber) {
-    this.identityNumber = identityNumber;
-  }
-
-  public Person(String identityNumber, LifeEventData lifeEventData) {
-    this.identityNumber = identityNumber;
-    this.lifeEventData = lifeEventData;
-  }
-
-  public Person(String firstName, String lastName) {
-    validateName(firstName, lastName);
-
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.children = null; // Added null initialization
-  }
-
-  public Person(String firstName, String middleName, String lastName) {
-    validateName(firstName, middleName, lastName);
-
-    this.firstName = firstName;
-    this.middleName = middleName;
-    this.lastName = lastName;
-    this.children = null;
-  }
-
-  public Person(String identityNumber, LifeEventData lifeEventData, String citizenship,
-      String spokenLanguage) {
-    this.identityNumber = identityNumber;
-    this.lifeEventData = lifeEventData;
-    this.citizenship = citizenship;
-    this.spokenLanguage = spokenLanguage;
-  }
-
-  public Person(long id, String firstName, String middleName, String lastName) {
+  public Person(UUID id, String firstName, String middleName, String lastName,
+      String identityNumber, LifeEventData lifeEventData, String citizenship,
+      String spokenLanguage, List<Person> children, Person spouse) {
     this.id = id;
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
-    this.children = null;
+    this.identityNumber = identityNumber;
+    this.lifeEventData = lifeEventData;
+    this.citizenship = citizenship;
+    this.spokenLanguage = spokenLanguage;
+    this.children = children;
+    this.spouse = spouse;
   }
 
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 

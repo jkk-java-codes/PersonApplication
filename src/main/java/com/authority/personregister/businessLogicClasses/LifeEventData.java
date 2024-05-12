@@ -17,6 +17,12 @@ public class LifeEventData implements LifeEventDataInterface {
         this.placeOfDeath = placeOfDeath;
     }
 
+    public LifeEventData(LocalDate dateOfBirth, LocalDate dateOfDeath) {
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfDeath = dateOfDeath;
+
+    }
+
     public LifeEventData(LocalDate dateOfBirth, String placeOfBirth, LocalDate dateOfDeath, String placeOfDeath) {
         this.dateOfBirth = dateOfBirth;
         this.placeOfBirth = placeOfBirth;
