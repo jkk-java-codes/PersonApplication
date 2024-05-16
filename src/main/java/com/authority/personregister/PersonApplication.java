@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.authority.controller")
+@ComponentScan({ "com.authority.controller", "com.authority.config" })
 public class PersonApplication {
 
 	public static void main(String[] args) {

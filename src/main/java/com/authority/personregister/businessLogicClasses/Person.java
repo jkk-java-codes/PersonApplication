@@ -131,18 +131,6 @@ public class Person implements PersonInterface {
     this.spouse = spouse;
   }
 
-  private void validateName(String firstName, String lastName) {
-    if (firstName.isEmpty() || lastName.isEmpty()) {
-      throw new IllegalArgumentException("First name and last name cannot be empty.");
-    }
-  }
-
-  private void validateName(String firstName, String middleName, String lastName) {
-    if (firstName.isEmpty() || middleName.isEmpty() || lastName.isEmpty()) {
-      throw new IllegalArgumentException("First name or middlename or last name cannot be empty.");
-    }
-  }
-
   private void validateStringInput(String value) {
     if (value == null || value.isEmpty()) {
       throw new IllegalArgumentException("Value cannot be null or empty.");
