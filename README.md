@@ -1,3 +1,23 @@
+# Java Interfaces
+
+The code consists of three Java interfaces: `PersonInterface`, `LifeEventDataInterface`, and `SpokenLanguageInterface`.
+
+## PersonInterface
+
+The `PersonInterface` defines the properties and methods that a `Person` class should have. It includes getter and setter methods for attributes such as `id`, `firstName`, `lastName`, `identityNumber`, `lifeEventData`, `citizenship`, `spokenLanguage`, `children`, and `spouse`. Implementing this interface, new classes can define their own implementation of the `Person` behavior and ensuring adhering to the interface methods.
+
+## LifeEventDataInterface
+
+The `LifeEventDataInterface` defines the properties and methods related to life event data, such as the date and place of birth and death. The `setLifeEventData` method allows setting the life event data using a combination of date, place, and a `LifeEventType`. Implementing this interface, new classes can incorporate life event data functionality and provide implementation of the methods.
+
+## SpokenLanguageInterface
+
+The `SpokenLanguageInterface` defines the properties and methods related to spoken languages. Implementing this interface, new classes can incorporate functionality related to spoken languages and provide implementation of the methods.
+
+## Person Class
+
+The provided `Person` class implements the `PersonInterface` and provides a concrete implementation of the interface's methods. Additionally, it includes additional methods such as `validateStringInput` for input validation purposes.
+
 # Person Controller API Documentation
 
 The Person Controller API provides endpoints for managing persons in a person register. It allows users to perform CRUD (Create, Read, Update, Delete) operations on person records.
